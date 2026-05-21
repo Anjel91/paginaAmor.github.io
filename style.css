@@ -1,135 +1,231 @@
 /* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #fdf6f9;
-  color: #333;
+body{
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#fdf6f9;
+  color:#333;
 }
 
-/* Menú superior */
-.menu {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255, 153, 204, 0.9);
-  padding: 15px 0;
-  z-index: 1000;
+/* MENÚ SUPERIOR */
+.menu{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(255,153,204,.95);
+  padding:15px 0;
+  z-index:1000;
+  backdrop-filter:blur(10px);
 }
 
-.menu ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.menu ul{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
 }
 
-.menu ul li {
-  margin: 0 20px;
-  position: relative;
+.menu ul li{
+  position:relative;
 }
 
-.menu ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5em; /* tamaño de iconos */
-  transition: color 0.3s;
+.menu ul li a{
+  text-decoration:none;
+  color:white;
+  font-size:2rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:60px;
+  height:60px;
+  border-radius:18px;
+  transition:.3s;
 }
 
-.menu ul li a:hover {
-  color: #ffe0f0;
+.menu ul li a:hover{
+  background:rgba(255,255,255,.2);
+  transform:scale(1.08);
 }
 
-/* Flecha blanca debajo del icono activo */
-.menu ul li.active::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid white;
+/* Flecha blanca (PC) apuntando hacia arriba desde abajo */
+.menu ul li.active::after{
+  content:"";
+  position:absolute;
+  bottom:-12px; /* debajo del ícono */
+  left:50%;
+  transform:translateX(-50%);
+  border-left:12px solid transparent;
+  border-right:12px solid transparent;
+  border-bottom:12px solid white; /* invertida, apunta hacia arriba */
 }
 
-/* Hero principal */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+/* HERO */
+.hero{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
 }
 
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%);
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(70%);
 }
 
-.hero .overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+.hero .overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.3),
+    rgba(0,0,0,.7)
+  );
 }
 
-.hero-text {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
+.hero-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  color:white;
+  width:90%;
 }
 
-.hero-text h1 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
+.hero-text h1{
+  font-size:3rem;
+  margin-bottom:15px;
 }
 
-.hero-text p {
-  font-size: 1.2em;
+.hero-text p{
+  font-size:1.4rem;
 }
 
-/* Contenido de páginas internas */
-.content {
-  margin-top: 80px; /* espacio para que no quede detrás del menú */
-  padding: 20px;
-  text-align: center;
+/* CONTENIDO */
+.content{
+  margin-top:110px;
+  padding:25px;
+  text-align:center;
 }
 
-.content h2 {
-  color: #d63384;
-  margin-bottom: 20px;
+.content h2{
+  color:#d63384;
+  margin-bottom:20px;
 }
 
-/* Galería de recuerdos */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+/* CANCIONES */
+.song{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  margin:30px 0;
 }
 
-.gallery img {
-  width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+.song audio{
+  flex:0 0 280px;
 }
 
-/* Responsivo para móviles */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 1.8em;
+.song .lyrics{
+  flex:1;
+  text-align:left;
+}
+
+.song .lyrics h3{
+  color:#d63384;
+  margin-bottom:8px;
+}
+
+/* GALERÍA */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:18px;
+}
+
+.gallery img{
+  width:220px;
+  border-radius:16px;
+  box-shadow:0 6px 14px rgba(0,0,0,.18);
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media(max-width:768px){
+
+  .menu{
+    padding:20px 0;
+    min-height:110px;
   }
-  .hero-text p {
-    font-size: 1em;
+
+  .menu ul{
+    justify-content:space-between; /* distribuye los 5 íconos */
+    gap:0; /* elimina espacio extra */
+    flex-wrap:nowrap; /* evita que se bajen de línea */
   }
-  .gallery img {
-    width: 100%;
-    max-width: 300px;
+
+  .menu ul li a{
+    font-size:2.5rem; /* tamaño ajustado */
+    width:70px;       /* ancho ajustado */
+    height:70px;      /* alto ajustado */
+    border-radius:18px;
+    background:rgba(255,255,255,.12);
+  }
+
+  /* Flecha blanca más grande en móvil apuntando hacia arriba desde abajo */
+  .menu ul li.active::after{
+    bottom:-22px;
+    border-left:22px solid transparent;
+    border-right:22px solid transparent;
+    border-bottom:22px solid white;
+  }
+
+  .hero{
+    height:65vh;
+  }
+
+  .hero-text h1{
+    font-size:2.3rem;
+  }
+
+  .hero-text p{
+    font-size:1.2rem;
+  }
+
+  .content{
+    margin-top:130px;
+  }
+
+  .gallery img{
+    width:100%;
+    max-width:360px;
+  }
+
+  .song{
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .song audio{
+    width:100%;
+    max-width:360px;
+  }
+
+  .song .lyrics{
+    text-align:center;
+    font-size:1.2rem;
+  }
+
+  .song .lyrics h3{
+    font-size:1.6rem;
   }
 }

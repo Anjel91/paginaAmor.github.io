@@ -2,28 +2,37 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+
+  <!-- Hace que se vea bien en celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Juego</title>
+
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Librería de iconos -->
+  <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <nav class="menu">
-  <ul>
-    <li><a href="index.html"><i class="fa fa-home"></i></a></li>
-    <li><a href="recuerdos.html"><i class="fa fa-image"></i></a></li>
-    <li><a href="canciones.html"><i class="fa fa-music"></i></a></li>
-    <li><a href="poemas.html"><i class="fa fa-feather"></i></a></li>
-    <li class="active"><a href="juego.html"><i class="fa fa-gamepad"></i></a></li>
-  </ul>
-</nav>
-
+    <ul>
+      <li><a href="index.html"><i class="fa fa-house"></i></a></li>
+      <li><a href="recuerdos.html"><i class="fa fa-image"></i></a></li>
+      <li><a href="canciones.html"><i class="fa fa-music"></i></a></li>
+      <li><a href="poemas.html"><i class="fa fa-feather"></i></a></li>
+      <li class="active"><a href="juego.html"><i class="fa fa-gamepad"></i></a></li>
+    </ul>
+  </nav>
 
   <section class="content">
     <h2>🎮 Juego especial</h2>
     <p>Aquí podrás jugar o descargar el juego que hice en RPG Maker.</p>
 
     <!-- Si exportaste el juego a web -->
-    <iframe src="juego/index.html" width="800" height="600"></iframe>
+    <div style="overflow-x:auto; text-align:center;">
+      <iframe src="juego/index.html" width="800" height="600" style="max-width:100%; border:none;"></iframe>
+    </div>
 
     <!-- O si es descarga -->
     <p><a href="juego/juego.zip" download>Descargar el juego</a></p>
