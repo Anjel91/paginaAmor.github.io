@@ -1,0 +1,135 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fdf6f9;
+  color: #333;
+}
+
+/* Menú superior */
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 153, 204, 0.9);
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu ul li {
+  margin: 0 20px;
+  position: relative;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em; /* tamaño de iconos */
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #ffe0f0;
+}
+
+/* Flecha blanca debajo del icono activo */
+.menu ul li.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+}
+
+/* Hero principal */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+}
+
+/* Contenido de páginas internas */
+.content {
+  margin-top: 80px; /* espacio para que no quede detrás del menú */
+  padding: 20px;
+  text-align: center;
+}
+
+.content h2 {
+  color: #d63384;
+  margin-bottom: 20px;
+}
+
+/* Galería de recuerdos */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.8em;
+  }
+  .hero-text p {
+    font-size: 1em;
+  }
+  .gallery img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
